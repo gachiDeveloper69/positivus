@@ -1,0 +1,47 @@
+@use '../core' as *;
+.banner {
+    --bannerImageOffsetY: 24px;
+
+    padding-block: var(--bannerImageOffsetY);
+
+    @include tablet {
+        --bannerImageOffsetY: 0;
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--color-grey);
+        border-radius: var(--border-radius-large);
+    }
+
+    &__body {
+        padding: 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        row-gap: 26px;
+
+        @include tablet {
+            padding: 50px;
+        }
+
+        @include mobile {
+            row-gap: 20px;
+        }
+    }
+
+    &__description {
+        max-width: 500px;
+    }
+
+    &__image {
+        margin-block: calc(var(--bannerImageOffsetY) * -1);
+
+        @include tablet { 
+            min-width: 40%;
+            height: auto;
+        }
+    }
+}

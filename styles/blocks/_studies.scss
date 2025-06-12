@@ -1,0 +1,115 @@
+@use '../core' as *;
+.studies{
+
+    position: relative;
+
+    @include desktop-above {
+        padding: 70px 60px;
+    }
+    
+    @include mobile-above {
+        padding: 40px;
+        color: var(--color-light);
+        background-color: var(--color-dark);
+        border-radius: var(--border-radius-large);
+    }
+
+    &__tap-zone {
+        position: absolute;
+        pointer-events: auto; // если вдруг где-то наследуется 'none'
+        top: 0;
+        width: 20vw;
+        height: 100%;
+        z-index: 10;
+        // background: rgba(0, 34, 145, 0.658);
+        // display: contents;
+
+        &.tap-zone--right {
+            right: 0;
+        }
+
+        &.tap-zone--left {
+            left: 0;
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        @include mobile {
+            display: flex;
+            width: 100%; /* Растягиваем на всю ширину */
+            overflow-x: hidden;
+            touch-action: pan-y; /* разрешаем вертикальный скролл, но не горизонтальный */
+            position: relative;
+            gap: 20px;
+            padding-inline: 20px;
+
+            &::-webkit-scrollbar {
+                display: none; /* Для Chrome, Safari и Edge */
+            }
+
+        }
+
+        
+    }   
+
+    
+
+    &__item {
+        --studiesItemPaddingX: 64px;
+
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+
+        @include desktop {
+            --studiesItemPaddingX: 32px;
+        }
+
+        @include mobile-above {
+            &:not(:first-child) {
+                padding-left: var(--studiesItemPaddingX);
+            }
+
+            &:not(:last-child) {
+                padding-right: var(--studiesItemPaddingX);
+                border-right: 1px solid var(--color-light);
+            }
+        }
+
+        @include mobile {
+            // min-width: 350px;
+            min-width: 60vw;
+            max-width: 80vw;
+            padding: 42px 50px;
+            color: var(--color-light);
+            background-color: var(--color-dark);
+            border-radius: var(--border-radius-large);
+            scroll-snap-align: center;
+            flex: 0 0 auto;
+
+            &:first-child {
+                margin-left: 60px;
+            }
+
+            &:last-child {
+                margin-right: 60px;
+            }
+        }
+    }
+
+    &__link {
+        display: inline-flex;
+        align-items: center;
+        column-gap: 15px;
+        font-size: 20px;
+        line-height: 1.4;
+        color: var(--color-accent);
+
+        @include hover {
+            opacity: 0.7;
+        }
+    }
+}
