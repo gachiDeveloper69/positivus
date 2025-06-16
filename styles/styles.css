@@ -13,7 +13,7 @@
   --shadow: 0 5px 0 0 var(--color-dark);
   --font-family-base: "Space Grotesk", sans-serif;
   --container-width: 1240px;
-  --container-padding-x: 20px;
+  --container-padding-x: 100px;
   --section-padding-y: 70px;
   --input-height: 59px;
   --button-height: 68px;
@@ -290,6 +290,16 @@ svg * {
   max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
   margin-inline: auto;
   padding-inline: var(--container-padding-x);
+}
+@media (max-width: 1280px) {
+  .container {
+    --container-padding-x: 50px;
+  }
+}
+@media (max-width: 767px) {
+  .container {
+    --container-padding-x: 20px;
+  }
 }
 
 .visually-hidden {
@@ -712,6 +722,17 @@ svg * {
 }
 .hero__partners-image {
   filter: grayscale(1);
+  transition: var(--transition-duration);
+}
+@media (hover: hover) {
+  .hero__partners-image:hover {
+    filter: none;
+  }
+}
+@media (hover: none) {
+  .hero__partners-image:active {
+    filter: none;
+  }
 }
 @media (max-width: 767px) {
   .hero__button {
@@ -1059,6 +1080,9 @@ svg * {
     padding: 30px;
   }
 }
+.process__accordion {
+  -webkit-tap-highlight-color: transparent;
+}
 .process__accordion[open] {
   --indicatorVerticalRotate: 0deg;
   background-color: var(--color-accent);
@@ -1198,6 +1222,166 @@ svg * {
   .team-card__body {
     --teamCardBodyMarginTop: 20px;
   }
+}
+
+.review-card {
+  --reviewCardCornerwidth: 41px;
+  --reviewCardCornerOffsetLeft: 50px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 48px;
+}
+@media (max-width: 767px) {
+  .review-card {
+    row-gap: 44px;
+  }
+}
+.review-card__body {
+  position: relative;
+  padding: 48px var(--reviewCardCornerOffsetLeft) 52px;
+  border: 1px solid var(--color-accent);
+  border-radius: var(--border-radius-large);
+  background-color: var(--color-dark);
+}
+@media (max-width: 767px) {
+  .review-card__body {
+    padding: 30px;
+  }
+}
+.review-card__body::after {
+  width: var(--reviewCardCornerwidth);
+  aspect-ratio: 1;
+  content: "";
+  position: absolute;
+  bottom: -41px;
+  left: var(--reviewCardCornerOffsetLeft);
+  border-left: inherit;
+  border-bottom: inherit;
+  background-color: var(--color-dark);
+  rotate: -45deg;
+  translate: 0 -50%;
+}
+.review-card__footer {
+  display: flex;
+  flex-direction: column;
+  padding-left: calc(var(--reviewCardCornerOffsetLeft) + var(--reviewCardCornerwidth) / 2);
+}
+.review-card__name, .review-card__company {
+  font-style: normal;
+}
+.review-card__name {
+  color: var(--color-accent);
+}
+
+.reviews {
+  display: flex;
+  flex-direction: column;
+  row-gap: 110px;
+  padding-top: 84px;
+  padding-bottom: 54px;
+  color: var(--color-light);
+  background-color: var(--color-dark);
+  border-radius: var(--border-radius-large);
+}
+@media (max-width: 1023px) {
+  .reviews {
+    row-gap: 46px;
+    padding-top: 30px;
+    padding-bottom: 46px;
+  }
+}
+.reviews__slider-list {
+  display: flex;
+  column-gap: 50px;
+  overflow: hidden;
+}
+.reviews__slider-item {
+  min-width: 660px;
+}
+.reviews__slider-item:first-child {
+  margin-left: 30%;
+}
+.reviews__slider-item:last-child {
+  margin-right: 30%;
+}
+@media (max-width: 1023px) {
+  .reviews__slider-item {
+    min-width: 80%;
+  }
+}
+.reviews__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100px;
+  min-width: 564px;
+  margin-inline: auto;
+}
+@media (max-width: 767px) {
+  .reviews__actions {
+    min-width: 90%;
+  }
+}
+.reviews__arrow-button {
+  padding: 0;
+  border-color: transparent;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  aspect-ratio: 1;
+  background-color: transparent;
+  color: var(--color-light);
+}
+@media (hover: hover) {
+  .reviews__arrow-button:hover {
+    color: var(--color-accent);
+  }
+}
+@media (hover: none) {
+  .reviews__arrow-button:active {
+    color: var(--color-accent);
+  }
+}
+.reviews__arrow-button[disabled] {
+  color: var(--color-grey-alt);
+  cursor: not-allowed;
+}
+.reviews__arrow-button svg {
+  width: 20px;
+  aspect-ratio: 1;
+}
+
+.pagination__list {
+  display: flex;
+}
+.pagination__button {
+  padding: 0;
+  border-color: transparent;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  aspect-ratio: 1;
+  color: var(--color-light);
+  background-color: transparent;
+}
+@media (hover: hover) {
+  .pagination__button:hover {
+    color: var(--color-accent);
+  }
+}
+@media (hover: none) {
+  .pagination__button:active {
+    color: var(--color-accent);
+  }
+}
+.pagination__button.is-current {
+  color: var(--color-accent);
 }
 
 /*# sourceMappingURL=styles.css.map */

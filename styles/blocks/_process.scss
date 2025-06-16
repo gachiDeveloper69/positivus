@@ -31,6 +31,7 @@
         border-radius: var(--border-radius-large);
         box-shadow: var(--shadow);
         transition-duration: var(--transition-duration);
+        
         // transition: max-height 0.5s ease;
 
         @include hover {
@@ -39,6 +40,10 @@
 
         @include mobile {
             padding: 30px;
+        }
+
+        & {
+            -webkit-tap-highlight-color: transparent;
         }
 
         &[open] {

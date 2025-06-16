@@ -1,0 +1,77 @@
+@use '../core' as *;
+.reviews {
+    display: flex;
+    flex-direction: column;
+    row-gap: 110px;
+    padding-top: 84px;
+    padding-bottom: 54px;
+    color: var(--color-light);
+    background-color: var(--color-dark);
+    border-radius: var(--border-radius-large);
+
+    @include tablet {
+        row-gap: 46px;
+        padding-top: 30px;
+        padding-bottom: 46px;
+    }
+
+    &__slider {
+        &-list {
+            display: flex;
+            column-gap: 50px;
+            overflow: hidden;
+        }
+
+        &-item {
+            min-width: 660px;
+
+            &:first-child {
+                margin-left: 30%;
+            }
+
+            &:last-child { 
+                margin-right: 30%;
+            }
+
+            @include tablet {
+                min-width: 80%;
+            }
+        }
+    }
+
+    &__actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100px;
+        min-width: 564px;
+        margin-inline: auto;
+
+        @include mobile {
+            min-width: 90%;
+        }
+    }
+
+    &__arrow-button {
+        @include reset-button;
+        @include flex-center;
+        @include square(48px);
+
+        background-color: transparent;
+        color: var(--color-light);
+
+        @include hover {
+            color: var(--color-accent);
+        }
+
+        &[disabled] {
+            color: var(--color-grey-alt);
+            cursor: not-allowed;
+        }
+
+        svg {
+            @include  square(20px);
+
+        }
+    }
+}

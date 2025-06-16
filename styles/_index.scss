@@ -14,12 +14,18 @@
 @forward 'blocks/section';
 @forward 'blocks/hero';
 @forward 'blocks/banner';
+
 @forward 'blocks/services';
 @forward 'blocks/service-card';
 @forward 'blocks/puddle-bg';
+
 @forward 'blocks/studies';
 @forward 'blocks/process';
 @forward 'blocks/team';
 @forward 'blocks/team-card.scss';
+
+@forward 'blocks/review-card';
+@forward 'blocks/reviews';
+@forward 'blocks/paginaton';
 
 

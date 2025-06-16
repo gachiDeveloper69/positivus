@@ -89,6 +89,10 @@
 
         &-image {
             filter: grayscale(1);
+            transition: var(--transition-duration);
+            @include hover {
+                filter: none;
+            }
         }
     }
 
