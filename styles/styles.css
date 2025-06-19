@@ -1237,6 +1237,7 @@ svg * {
   }
 }
 .review-card__body {
+  user-select: none;
   position: relative;
   padding: 48px var(--reviewCardCornerOffsetLeft) 52px;
   border: 1px solid var(--color-accent);
@@ -1299,10 +1300,10 @@ svg * {
   min-width: 660px;
 }
 .reviews__slider-item:first-child {
-  margin-left: 30%;
+  margin-left: 50%;
 }
 .reviews__slider-item:last-child {
-  margin-right: 30%;
+  margin-right: 50%;
 }
 @media (max-width: 1023px) {
   .reviews__slider-item {

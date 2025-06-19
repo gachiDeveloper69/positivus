@@ -26,11 +26,11 @@
             min-width: 660px;
 
             &:first-child {
-                margin-left: 30%;
+                margin-left: 50%;
             }
 
             &:last-child { 
-                margin-right: 30%;
+                margin-right: 50%;
             }
 
             @include tablet {
