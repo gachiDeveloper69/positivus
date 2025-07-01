@@ -1,31 +1,57 @@
 @use 'media' as *;
+$color-accent: #b9ff66;
+$color-grey: #f3f3f3;
+$color-grey-alt: #898989;
+$color-dark: #191a23;
+$color-dark-alt: #292a32;
+$color-light: #ffffff;
+
+$border: 1px solid $color-dark;
+$border-radius: 14px;
+$border-radius-small: 7px;
+$border-radius-large: 45px;
+
+$shadow: 0 5px 0 0 $color-dark;
+
+$font-family-base: 'Space Grotesk', sans-serif;
+
+$container-width: 1240px;
+$container-padding-x: 100px;
+
+$section-padding-y: 70px;
+
+$input-height: 59px;
+$button-height: 68px;
+
+$transition-duration: 0.2s;
+
 
 :root {
-	--color-accent: #b9ff66;
-	--color-grey: #f3f3f3;
-    --color-grey-alt: #898989;
-	--color-dark: #191a23;
-    --color-dark-alt: #292a32;
-    --color-light: #ffffff;
+--color-accent: #{$color-accent};
+	--color-grey: #{$color-grey};
+    --color-grey-alt: #{$color-grey-alt};
+	--color-dark: #{$color-dark};
+    --color-dark-alt: #{$color-dark-alt};
+    --color-light: #{$color-light};
 
-    --border: 1px solid var(--color-dark);
-    --border-radius: 14px;
-    --border-radius-small: 7px;
-    --border-radius-large: 45px;
+    --border: #{$border};
+    --border-radius: #{$border-radius};
+    --border-radius-small: #{$border-radius-small};
+    --border-radius-large: #{$border-radius-large};
 
-    --shadow: 0 5px 0 0 var(--color-dark);
+    --shadow: #{$shadow};
 
-    --font-family-base: 'Space Grotesk', sans-serif;
+    --font-family-base: #{$font-family-base};
 
-    --container-width: 1240px;
-    --container-padding-x: 100px;
+    --container-width: #{$container-width};
+    --container-padding-x: #{$container-padding-x};
 
-    --section-padding-y: 70px;
+    --section-padding-y: #{$section-padding-y};
 
-    --input-height: 59px;
-    --button-height: 68px;
+    --input-height: #{$input-height};
+    --button-height: #{$button-height};
 
-    --transition-duration: 0.2s;
+    --transition-duration: #{$transition-duration};
 
     @include desktop {
         --section-padding-y: 50px;

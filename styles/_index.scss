@@ -5,6 +5,10 @@
 @forward 'utils';
 
 // blocks
+@forward 'blocks/field';
+@forward 'blocks/radios';
+@forward 'blocks/radio';
+
 @forward 'blocks/button';
 @forward 'blocks/grid';
 @forward 'blocks/burger-button';
@@ -27,5 +31,7 @@
 @forward 'blocks/review-card';
 @forward 'blocks/reviews';
 @forward 'blocks/paginaton';
+
+@forward 'blocks/contact-us'
 
 

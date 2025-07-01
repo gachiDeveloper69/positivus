@@ -1,0 +1,46 @@
+@use '../core' as *;
+.field {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    row-gap: 5px;
+
+    @include mobile {
+        row-gap: 10px;
+    }
+
+    &__label {
+        @include fluid-text(16,14);
+    }
+
+    &__input {
+        width: 100%;
+        height: var(--input-height);
+        padding-inline: 30px;
+        border: var(--border);
+        border-radius: var(--border-radius);
+        
+        @include hover {
+            background-color: var(--color-accent);
+            
+        }
+
+        @include mobile {
+            padding-inline: 20px;
+        }
+
+        &::placeholder {
+            color: $color-grey-alt
+        }
+
+        &--textarea {
+            height: 190px;
+            padding-block: 19px;
+            resize: none;
+
+            @include mobile {
+                height: 132px;
+            }
+        }
+    }
+}
