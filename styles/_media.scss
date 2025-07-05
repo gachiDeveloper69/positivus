@@ -47,7 +47,7 @@ $mobile-s: 480px;
 }
 
 @mixin mobile-s-above {
-    @media (max-width: $mobile-s-above) {
+    @media (min-width: $mobile-s-above) {
         @content;
     }
 }

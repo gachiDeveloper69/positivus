@@ -1,5 +1,11 @@
 @use '../core' as *;
 .field {
+    --fieldInputHeight: #{$input-height};
+    --fieldInputTextColor: #{$color-dark};
+    --fieldInputBgColor: #{$color-light};
+    --fieldInputBorderColor: #{$color-dark};
+    --fieldInputPlaceHolderColor: #{$color-grey-alt};
+    --fieldInputHoverBgColor: #{$color-accent};
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -9,19 +15,39 @@
         row-gap: 10px;
     }
 
+    &--high {
+        --fieldInputHeight: #{$button-height};
+    }
+
+    &--dark-bg {
+        --fieldInputTextColor: #{$color-accent};
+        --fieldInputBgColor: #{$color-dark-alt};
+        --fieldInputBorderColor: #{$color-light};
+        --fieldInputPlaceHolderColor: #{$color-light};
+        --fieldInputHoverBgColor: #{$color-dark};
+
+    }
+
     &__label {
         @include fluid-text(16,14);
     }
 
     &__input {
         width: 100%;
-        height: var(--input-height);
+        height: var(--fieldInputHeight);
         padding-inline: 30px;
-        border: var(--border);
+        border: 1px solid var(--fieldInputBorderColor);
         border-radius: var(--border-radius);
+        color: var(--fieldInputTextColor);
+        background-color: var(--fieldInputBgColor);
+
+        &:focus {
+            border-color: 1px solid var(--fieldInputTextColor);
+            outline: none;
+        }
         
         @include hover {
-            background-color: var(--color-accent);
+            background-color: var(--fieldInputHoverBgColor);
             
         }
 
@@ -30,7 +56,7 @@
         }
 
         &::placeholder {
-            color: $color-grey-alt
+            color: var(--fieldInputPlaceHolderColor);
         }
 
         &--textarea {

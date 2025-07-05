@@ -328,6 +328,12 @@ svg * {
 }
 
 .field {
+  --fieldInputHeight: 59px;
+  --fieldInputTextColor: #191a23;
+  --fieldInputBgColor: #ffffff;
+  --fieldInputBorderColor: #191a23;
+  --fieldInputPlaceHolderColor: #898989;
+  --fieldInputHoverBgColor: #b9ff66;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -338,24 +344,40 @@ svg * {
     row-gap: 10px;
   }
 }
+.field--high {
+  --fieldInputHeight: 68px;
+}
+.field--dark-bg {
+  --fieldInputTextColor: #b9ff66;
+  --fieldInputBgColor: #292a32;
+  --fieldInputBorderColor: #ffffff;
+  --fieldInputPlaceHolderColor: #ffffff;
+  --fieldInputHoverBgColor: #191a23;
+}
 .field__label {
   font-size: clamp(14px, 1.1111111111vw, 16px);
 }
 .field__input {
   width: 100%;
-  height: var(--input-height);
+  height: var(--fieldInputHeight);
   padding-inline: 30px;
-  border: var(--border);
+  border: 1px solid var(--fieldInputBorderColor);
   border-radius: var(--border-radius);
+  color: var(--fieldInputTextColor);
+  background-color: var(--fieldInputBgColor);
+}
+.field__input:focus {
+  border-color: 1px solid var(--fieldInputTextColor);
+  outline: none;
 }
 @media (hover: hover) {
   .field__input:hover {
-    background-color: var(--color-accent);
+    background-color: var(--fieldInputHoverBgColor);
   }
 }
 @media (hover: none) {
   .field__input:active {
-    background-color: var(--color-accent);
+    background-color: var(--fieldInputHoverBgColor);
   }
 }
 @media (max-width: 767px) {
@@ -364,7 +386,7 @@ svg * {
   }
 }
 .field__input::placeholder {
-  color: #898989;
+  color: var(--fieldInputPlaceHolderColor);
 }
 .field__input--textarea {
   height: 190px;
@@ -456,6 +478,22 @@ svg * {
 .button--transparent {
   color: var(--color-dark);
   background-color: transparent;
+}
+.button--accent {
+  color: #191a23;
+  background-color: #b9ff66;
+}
+@media (hover: hover) {
+  .button--accent:hover {
+    color: #b9ff66;
+    background-color: #191a23;
+  }
+}
+@media (hover: none) {
+  .button--accent:active {
+    color: #b9ff66;
+    background-color: #191a23;
+  }
 }
 .button:focus:not(:focus-visible) {
   outline: none;
@@ -1545,6 +1583,225 @@ svg * {
 @media (min-width: 768px) {
   .contact-us__form {
     row-gap: 40px;
+  }
+}
+
+.soc1als__list {
+  display: flex;
+  column-gap: 20px;
+}
+.soc1als__link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  aspect-ratio: 1;
+  color: #191a23;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+@media (hover: hover) {
+  .soc1als__link:hover {
+    background-color: #b9ff66;
+  }
+}
+@media (hover: none) {
+  .soc1als__link:active {
+    background-color: #b9ff66;
+  }
+}
+.soc1als__link svg {
+  width: 50%;
+  height: 50%;
+}
+
+.subscribe-form {
+  display: flex;
+  column-gap: 20px;
+  padding: 58px 40px;
+  background-color: #292a32;
+  border-radius: 14px;
+}
+@media (max-width: 1280px) {
+  .subscribe-form {
+    flex-direction: column;
+    row-gap: 22px;
+    padding: 30px;
+    width: 100%;
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer {
+    padding-inline: 0;
+  }
+}
+.footer__inner {
+  padding: 55px 60px 50px;
+  color: #ffffff;
+  background-color: #191a23;
+}
+@media (min-width: 768px) {
+  .footer__inner {
+    border-radius: 45px 45px 0 0;
+  }
+}
+@media (max-width: 767px) {
+  .footer__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 37px;
+    padding: 50px 100px 30px;
+  }
+}
+@media (max-width: 480px) {
+  .footer__inner {
+    padding-inline: 10px;
+  }
+}
+.footer__navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 30px;
+}
+@media (max-width: 1023px) {
+  .footer__navigation {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 37px;
+  }
+}
+@media (max-width: 767px) {
+  .footer__navigation {
+    display: contents;
+  }
+}
+.footer__navigation:not(:last-child) {
+  margin-bottom: 66px;
+}
+.footer__menu-list {
+  display: flex;
+  align-items: center;
+  column-gap: 40px;
+}
+@media (max-width: 767px) {
+  .footer__menu-list {
+    flex-direction: column;
+    row-gap: 15px;
+  }
+}
+.footer__menu-link {
+  display: inline-flex;
+  align-items: center;
+  height: 30px;
+  text-decoration: underline;
+}
+@media (hover: hover) {
+  .footer__menu-link:hover {
+    color: #b9ff66;
+    transition: 0.2s;
+  }
+}
+@media (hover: none) {
+  .footer__menu-link:active {
+    color: #b9ff66;
+    transition: 0.2s;
+  }
+}
+@media (max-width: 767px) {
+  .footer__soc1als {
+    order: 1;
+  }
+}
+.footer__body {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 50px;
+}
+@media (min-width: 768px) {
+  .footer__body:not(:last-child) {
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid currentColor;
+  }
+}
+@media (max-width: 767px) {
+  .footer__body {
+    flex-direction: column;
+    align-items: center;
+    row-gap: inherit;
+  }
+}
+@media (max-width: 480px) {
+  .footer__body {
+    width: 100%;
+  }
+}
+.footer__contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  row-gap: 27px;
+}
+@media (max-width: 767px) {
+  .footer__contacts {
+    align-items: center;
+    text-align: center;
+  }
+}
+.footer__contacts-title {
+  color: #191a23;
+}
+.footer__contacts-body p {
+  --paragraphMarginBottom: 20px;
+}
+.footer__contacts-body a {
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  transition: all 0.2s ease;
+}
+@media (hover: hover) {
+  .footer__contacts-body a:hover {
+    color: #b9ff66;
+    text-decoration-color: #b9ff66;
+  }
+}
+@media (hover: none) {
+  .footer__contacts-body a:active {
+    color: #b9ff66;
+    text-decoration-color: #b9ff66;
+  }
+}
+.footer__extra {
+  display: flex;
+  column-gap: 40px;
+}
+@media (max-width: 767px) {
+  .footer__extra {
+    order: 2;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 15px;
+    border-top: 1px solid currentColor;
+    padding-top: 37px;
+    width: 100%;
+  }
+}
+.footer__privacy-policy-link {
+  text-decoration: underline;
+}
+@media (hover: hover) {
+  .footer__privacy-policy-link:hover {
+    color: #b9ff66;
+  }
+}
+@media (hover: none) {
+  .footer__privacy-policy-link:active {
+    color: #b9ff66;
   }
 }
 

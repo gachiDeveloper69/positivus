@@ -25,8 +25,19 @@
         background-color: transparent;
     }
     
+    &--accent {
+        color: $color-dark;
+        background-color: $color-accent;
+
+        @include hover {
+            color: $color-accent;
+            background-color: $color-dark;
+        }
+    }
+
+    
+
     &:focus:not(:focus-visible) {
     outline: none;
-    
   }
 }

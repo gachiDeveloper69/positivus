@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "generate-css-vars": "node script/generate-css-vars.js",
+    "lint:html": "htmlhint \"*.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,5 +22,8 @@
   "homepage": "https://github.com/gachiDeveloper69/positivus#readme",
   "dependencies": {
     "chokidar": "^4.0.3"
+  },
+  "devDependencies": {
+    "htmlhint": "^1.6.3"
   }
 }

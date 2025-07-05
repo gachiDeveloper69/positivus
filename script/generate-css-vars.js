@@ -63,14 +63,25 @@ function updateCssVars() {
   }
 
 // 1. Ищем SCSS-переменные с пометкой /* dubbed */
-const scssVars = {};
-const scssVarRegex = /\$([a-zA-Z0-9_-]+):\s*([^;]+);\s*\/\*\s*dubbed\s*\*\//g;
-let match;
+const args = process.argv.slice(2);
+const isDubbedOnly = args.includes('--dubbed-only');
 
-while ((match = scssVarRegex.exec(scssContent)) !== null) {
-    const [_, name, value] = match;
-    scssVars[name] = value.trim();
+// 1. Парсим SCSS переменные
+const scssVars = {};
+const dubbedRegex = /^\s*\$([a-zA-Z0-9_-]+):\s*([^;]+);\s*(?:\/\*\s*dubbed\s*\*\/|\/\/\s*dubbed)\s*$/gm;
+const allVarsRegex = /^\s*\$([a-zA-Z0-9_-]+):\s*([^;]+);/gm;
+
+const regexToUse = isDubbedOnly ? dubbedRegex : allVarsRegex;
+
+let match;
+while ((match = regexToUse.exec(scssContent)) !== null) {
+  const [_, name, value] = match;
+  scssVars[name] = value.trim();
 }
+
+console.log(isDubbedOnly
+  ? '🎯 Парсим ТОЛЬКО SCSS-переменные с комментарием //dubbed или /*dubbed*/'
+  : '🔄 Парсим ВСЕ SCSS-переменные');
 
 if (Object.keys(scssVars).length === 0) {
   console.log('🤷 Нет переменных с комментарием dubbed для обработки.');
