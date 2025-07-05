@@ -1149,10 +1149,10 @@ svg * {
     flex: 0 0 auto;
   }
   .studies__item:first-child {
-    margin-left: 60px;
+    margin-left: 50%;
   }
   .studies__item:last-child {
-    margin-right: 60px;
+    margin-right: 50%;
   }
 }
 .studies__link {
