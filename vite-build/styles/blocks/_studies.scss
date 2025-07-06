@@ -82,7 +82,7 @@
         @include mobile {
             // min-width: 350px;
             min-width: 60vw;
-            max-width: 80vw;
+            max-width: 70vw;
             padding: 42px 50px;
             color: var(--color-light);
             background-color: var(--color-dark);
@@ -91,11 +91,11 @@
             flex: 0 0 auto;
 
             &:first-child {
-                margin-left: 60px;
+                margin-left: 50%;
             }
 
             &:last-child {
-                margin-right: 60px;
+                margin-right: 50%;
             }
         }
     }

@@ -122,7 +122,12 @@ export function centerClosestSlide(slider, slides, slideIndex = null, allowBounc
         }
       }
     */
-    asyncScroll(150, 15);
+    if (window.innerWidth >= 768) {
+      asyncScroll(150, 15);
+    } else {
+      asyncScroll(80, 1);
+    }
+    //asyncScroll(150, 15);
     sliderState.currentSlideIndex = slides.indexOf(targetSlide);
     /*
     slider.scrollBy({

@@ -966,6 +966,11 @@ svg * {
     row-gap: 27px;
   }
 }
+@media (max-width: 480px) {
+  .service-card {
+    padding: 30px;
+  }
+}
 .service-card--accent-bg {
   background-color: var(--color-accent);
 }
@@ -1140,7 +1145,7 @@ svg * {
 @media (max-width: 767px) {
   .studies__item {
     min-width: 60vw;
-    max-width: 80vw;
+    max-width: 70vw;
     padding: 42px 50px;
     color: var(--color-light);
     background-color: var(--color-dark);

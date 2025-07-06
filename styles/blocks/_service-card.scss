@@ -17,6 +17,10 @@
 
     }
 
+    @include mobile-s {
+        padding: 30px;
+    }
+
     &--accent-bg {
         background-color: var(--color-accent);
     }
