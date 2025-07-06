@@ -1,0 +1,22 @@
+# Node
+node_modules/
+package-lock.json
+
+# SCSS
+*.css.map
+.sass-cache/
+
+# Кэш
+.cache/
+dist/
+build/
+
+# VS Code
+.vscode/
+
+# Логи и временные файлы
+*.log
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
