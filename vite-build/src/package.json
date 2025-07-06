@@ -1,0 +1,29 @@
+{
+  "name": "positivus",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "generate-css-vars": "node script/generate-css-vars.js",
+    "lint:html": "htmlhint \"*.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gachiDeveloper69/positivus.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/gachiDeveloper69/positivus/issues"
+  },
+  "homepage": "https://github.com/gachiDeveloper69/positivus#readme",
+  "dependencies": {
+    "chokidar": "^4.0.3"
+  },
+  "devDependencies": {
+    "htmlhint": "^1.6.3"
+  }
+}

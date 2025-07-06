@@ -1,0 +1,40 @@
+@forward 'core';
+@forward 'fonts';
+@forward 'globals';
+@forward 'normalize';
+@forward 'utils';
+
+// blocks
+@forward 'blocks/field';
+@forward 'blocks/radios';
+@forward 'blocks/radio';
+
+@forward 'blocks/button';
+@forward 'blocks/grid';
+@forward 'blocks/burger-button';
+@forward 'blocks/header';
+@forward 'blocks/cross-button';
+@forward 'blocks/mobile_overlay';
+@forward 'blocks/section';
+@forward 'blocks/hero';
+@forward 'blocks/banner';
+
+@forward 'blocks/services';
+@forward 'blocks/service-card';
+@forward 'blocks/puddle-bg';
+
+@forward 'blocks/studies';
+@forward 'blocks/process';
+@forward 'blocks/team';
+@forward 'blocks/team-card.scss';
+
+@forward 'blocks/review-card';
+@forward 'blocks/reviews';
+@forward 'blocks/paginaton';
+
+@forward 'blocks/contact-us';
+
+@forward 'blocks/soc1als';
+@forward 'blocks/subscribe-form';
+@forward 'blocks/footer';
+
