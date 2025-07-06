@@ -1,22 +1,36 @@
 import { execSync } from 'node:child_process';
-import { rmSync, mkdirSync, cpSync } from 'node:fs';
+import { rmSync, mkdirSync, cpSync, existsSync } from 'node:fs';
 import path from 'node:path';
 
-const viteDist = path.resolve('./vite-build/dist');
-const docs = path.resolve('./docs');
+const root = path.resolve();
+const viteDist = path.join(root, 'dist');
+const docs = path.join(root, 'docs');
 
-console.log('🧼 Чистим docs...');
-rmSync(docs, { recursive: true, force: true });
+// 1. Чистим vite-build/dist
+if (existsSync(viteDist)) {
+  console.log('🧼 Чистим vite-build/dist...');
+  rmSync(viteDist, { recursive: true, force: true });
+}
+
+// 2. Билдим Vite
+console.log('⚙️ Билдим проект...');
+execSync('npx vite build --config vite-build/vite.config.js', { stdio: 'inherit' });
+
+// 3. Чистим docs/
+if (existsSync(docs)) {
+  console.log('🧹 Чистим docs...');
+  rmSync(docs, { recursive: true, force: true });
+}
 mkdirSync(docs);
 
-console.log('📦 Копируем билд из vite-build/dist...');
+// 4. Копируем dist → docs
+console.log('📦 Копируем билд в docs...');
 cpSync(viteDist, docs, { recursive: true });
 
-console.log('🌀 Добавляем изменения в git...');
-execSync('git add .', { stdio: 'inherit' }); // вот это важно
-
-console.log('📤 Коммитим и пушим...');
+// 5. Git: add, commit, push
+console.log('📤 Деплой в Git...');
+execSync('git add .', { stdio: 'inherit' });
 execSync('git commit -m "deploy: обновлённый билд"', { stdio: 'inherit' });
 execSync('git push', { stdio: 'inherit' });
 
-console.log('✅ Готово! Деплой улетел на GitHub Pages!');
+console.log('✅ Готово! Сайт задеплоен на GitHub Pages!');

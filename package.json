@@ -7,7 +7,7 @@
     "generate-css-vars": "node script/generate-css-vars.js",
     "lint:html": "htmlhint \"*.html",
     "build": "vite build --config vite-build/vite.config.js",
-    "deploy": "node deploy.mjs && git add docs && git commit -m \"deploy: обновлённый билд\" && git push",
+    "deploy": "node deploy.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
